@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/form_style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<h1>Add a Vessel Position :</h1>
+<div class="form-wrap">
+    <form method="post">
+        <div class="field">
+            <label for="vessel_id">Vessel ID: <em>(required)</em></label>
+            <input type="text" name="vessel_id" id="vessel_id" pattern="[0-9]{1,10}" required/>
+        </div>
+        <div class="field"> 
+            <label for="latitude">Latitude: <em>(required)</em> </label>
+            <input type="text" name="latitude" id="latitude" pattern="[0-9]+(\.[0-9]{1,7})?%?" required/>
+        </div> 
+        <div class="field">
+            <label for="longitude">Longitude: <em>(required)</em> </label>
+            <input type="text" name="longitude" id="longitude" pattern="[0-9]+(\.[0-9]{1,7})?%?" required/>
+        </div>
+        <div class="field">
+            <label for="position_time">Position Time: <em>(required)</em></label>
+            <input type="datetime" name="position_time" id="position_time" placeholder="1990-12-31T23:59:60Z"
+            pattern="/([0-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])T([0-5][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))/"
+            required/>
+        </div>
+        <div class="field">
+            <input type="submit">
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

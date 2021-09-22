@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vessels Tracking App</title>
+    <!-- Local CSS file for styling the application-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base_style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.webp') }}" type="image/x-icon">
+
+    <!-- Additional Styling -->
+    {% block styling %}
+
+    {% endblock %}
+
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <a class="nav-link logo" href="{{ url_for('index') }}"><strong>Vessels Tracking App</strong></a>
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('show_trips') }}"><strong>Vessels Trips</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('add_position') }}"><strong>Add Position</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <small>© houssemhosni.com kpler exercise 2021</small>
+    </footer>
+
+</body>
+</html>

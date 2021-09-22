@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <figure class="content-image">
+      <img src="{{ url_for('static', filename='img/map.png') }}" class="center" alt="map">
+  </figure>
+</div>
+{% endblock %}
